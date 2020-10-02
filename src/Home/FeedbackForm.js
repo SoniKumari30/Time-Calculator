@@ -30,7 +30,6 @@ class FeedbackForm extends React.Component(){
 
     
          const arr = []
-         this.setState({ arr })
          JSON.parse(localStorage.getItem('arr'))
          arr.push(formData)
         
