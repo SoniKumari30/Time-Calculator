@@ -10,7 +10,7 @@ class UserForm extends React.Component(){
                 email: '',
                 phone: '',
                 name: '',
-                gender: '',
+                rating: '',
                 arr:[]
             }
         }
@@ -70,7 +70,7 @@ class UserForm extends React.Component(){
                                     name="text"
                                     value={this.state.text}
                                     onChange={this.handleChange}
-                                    //required
+                                    required
                                 />
                             </Col>
                             <Col md={6}>
@@ -81,12 +81,11 @@ class UserForm extends React.Component(){
                                 name="email"
                                 value={this.state.email}
                                 onChange={this.handleChange}
-                                //required
+                                required
                             />
                             </Col>
                         </Row>
     
-                        {/* ************************* */}
                         <Row>
                             <Col>
                             <Form.Label>Quality:- </Form.Label>
@@ -121,7 +120,7 @@ class UserForm extends React.Component(){
                                     name="phone"
                                     value={this.state.phone}
                                     onChange={this.handleChange}
-                                    //required
+                                    required
                                 />
                             </Col>
                             <Col md={6}>
@@ -132,7 +131,7 @@ class UserForm extends React.Component(){
                                 name="name"
                                 value={this.state.name}
                                 onChange={this.handleChange}
-                                //required
+                                required
                             />
                             </Col>
                         </Row>

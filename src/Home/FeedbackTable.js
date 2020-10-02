@@ -1,9 +1,8 @@
 import React from "react"
 import { Table } from "react-bootstrap"
 
-function DashBoard(){
+function FeedbackTable(){
     const table= JSON.parse(localStorage.getItem('arr'))
-    console.log("check", table)
     return (
         <div>
             <h3>All Feedback</h3>
@@ -39,4 +38,4 @@ function DashBoard(){
     )
 }
 
-export default DashBoard
+export default FeedbackTable
