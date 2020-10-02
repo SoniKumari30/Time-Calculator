@@ -1,7 +1,7 @@
 import React from "react"
 import {Container, Form, Col, Row, Button} from 'react-bootstrap'
 
-class UserForm extends React.Component(){
+class FeedbackForm extends React.Component(){
         constructor(props){
             super(props)
             this.state = {
@@ -23,13 +23,14 @@ class UserForm extends React.Component(){
             email: this.state.email,
             phone: this.state.phone,
             name: this.state.name,
-            gender: this.state.gender,
-            //arr: this.state.arr
+            rating: this.state.rating,
+            arr: this.state.arr
             
         }
 
-        //const arr=[]
-        console.log(formData)
+    
+         const arr = []
+         this.setState({ arr })
          JSON.parse(localStorage.getItem('arr'))
          arr.push(formData)
         
@@ -42,8 +43,8 @@ class UserForm extends React.Component(){
         })
     }
 
-     handleRadioChange=(gender)=>{
-        this.setValue({gender})
+     handleRadioChange=(rating)=>{
+        this.setValue({rating})
     }
 
     render(){
@@ -89,20 +90,20 @@ class UserForm extends React.Component(){
                         <Row>
                             <Col>
                             <Form.Label>Quality:- </Form.Label>
-                                <Form.Check inline label='Excellent' type="radio" id="excellent" name="gender"
-                                    checked={this.state.gender==='excellent'}
+                                <Form.Check inline label='Excellent' type="radio" id="excellent" name="rating"
+                                    checked={this.state.rating==='excellent'}
                                     onChange={()=>{this.handleRadioChange('excellent')}}
                                 />
-                                <Form.Check inline label='Good' type="radio" id="good" name="gender"
-                                    checked={this.state.gender==='good'}
+                                <Form.Check inline label='Good' type="radio" id="good" name="rating"
+                                    checked={this.state.rating==='good'}
                                     onChange={()=>{this.handleRadioChange('good')}}
                                 />
-                                <Form.Check inline label='Fair' type="radio" id="fair" name="gender"
-                                    checked={this.state.gender==='fair'}
+                                <Form.Check inline label='Fair' type="radio" id="fair" name="rating"
+                                    checked={this.state.rating==='fair'}
                                     onChange={()=>{this.handleRadioChange('fair')}}
                                 />
-                                <Form.Check inline label='Bad' type="radio" id="bad" name="gender"
-                                    checked={this.state.gender==='bad'}
+                                <Form.Check inline label='Bad' type="radio" id="bad" name="rating"
+                                    checked={this.state.rating==='bad'}
                                     onChange={()=>{this.handleRadioChange('bad')}}
                                 />
                             </Col>
@@ -152,4 +153,4 @@ class UserForm extends React.Component(){
     
 }
 
-export default UserForm
+export default FeedbackForm
