@@ -29,12 +29,12 @@ class FeedbackForm extends React.Component{
         }
 
     
-        var arr = []
-        arr.push(formData)
-        arr=  arr.concat(JSON.parse(localStorage.getItem('arr') || "[]"))
+        var array = []
+        array.push(formData)
+        array=  array.concat(JSON.parse(localStorage.getItem('array') || "[]"))
 
-        const setItem = localStorage.setItem('arr',JSON.stringify(arr))
-        if(arr){
+        const setItem = localStorage.setItem('array',JSON.stringify(array))
+        if(array){
             alert("Successfully added!")
         }
     }
@@ -51,8 +51,9 @@ class FeedbackForm extends React.Component{
 
     render(){
         return (
-            <div>
+            <div className="fluid-container" style={{height:"100%", width: "100%",backgroundColor:" red",backgroundImage:"linear-gradient(#F4F8F9,#B7F4C9,#E4C4F9)"}}>
                 <Container>
+                <h1 className='pt-5 pb-2'>Form</h1>
                     <Form onSubmit={this.handleSubmit}>
                         <Row>
                             <Col>
@@ -77,7 +78,7 @@ class FeedbackForm extends React.Component{
                                 />
                             </Col>
                             <Col md={6}>
-                            <Form.Label htmlFor="email">Email:-</Form.Label>
+                            <Form.Label htmlFor="email">Email field</Form.Label>
                             <Form.Control 
                                 type="text"
                                 id="email"
@@ -89,9 +90,23 @@ class FeedbackForm extends React.Component{
                             </Col>
                         </Row>
     
-                        <Row>
+                        
+                        <Row className="pt-3">
+                            <Col md={6}>
+                                <Form.Label htmlFor="phone">Phone field</Form.Label>
+                                <Form.Control 
+                                    type="Number"
+                                    id="phone"
+                                    name="phone"
+                                    value={this.state.phone}
+                                    onChange={this.handleChange}
+                                    required
+                                />
+                            </Col>
+
+                            <Row>
                             <Col>
-                            <Form.Label>Quality:- </Form.Label>
+                            <Form.Label>Radio Button </Form.Label>
                                 <Form.Check inline label='Excellent' type="radio" id="excellent" name="rating"
                                     checked={this.state.rating==='excellent'}
                                     onChange={()=>{this.handleRadioChange('excellent')}}
@@ -107,27 +122,14 @@ class FeedbackForm extends React.Component{
                                 <Form.Check inline label='Bad' type="radio" id="bad" name="rating"
                                     checked={this.state.rating==='bad'}
                                     onChange={()=>{this.handleRadioChange('bad')}}
+                                    required
                                 />
                             </Col>
     
                            
                         </Row>
-    
-                        
-                        <Row className="pt-3">
                             <Col md={6}>
-                                <Form.Label htmlFor="phone">Phone:-</Form.Label>
-                                <Form.Control 
-                                    type="Number"
-                                    id="phone"
-                                    name="phone"
-                                    value={this.state.phone}
-                                    onChange={this.handleChange}
-                                    required
-                                />
-                            </Col>
-                            <Col md={6}>
-                            <Form.Label htmlFor="name">Name:-</Form.Label>
+                            <Form.Label htmlFor="name">Name *</Form.Label>
                             <Form.Control 
                                 type="text"
                                 id="name"

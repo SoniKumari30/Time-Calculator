@@ -1,13 +1,14 @@
 import React from "react"
-import { Table } from "react-bootstrap"
+import { Table, Container } from "react-bootstrap"
 
 function FeedbackTable(){
-    const table= JSON.parse(localStorage.getItem('arr'))
+    const table= JSON.parse(localStorage.getItem('array'))
     return (
-        <div>
-            <h3>All Feedback</h3>
-            <Table striped bordered hover>
-                <thead>
+        <div className="fluid-container" style={{height:"100%", width: "100%",backgroundColor:" red",backgroundImage:"linear-gradient(#F4F8F9,#B7F4C9,#E4C4F9 )"}}>
+             <Container>
+            <h1 className='pt-5 pb-2'>All Feedback</h1>
+            <Table striped bordered hover responsive>
+            <thead className='thead-dark'>
                     <tr>
                     <th>Form Name</th>
                     <th>Text field</th>
@@ -34,6 +35,7 @@ function FeedbackTable(){
                     }
                 </tbody>
                 </Table>
+                </Container>
         </div>
     )
 }

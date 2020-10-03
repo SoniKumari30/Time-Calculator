@@ -1,5 +1,5 @@
 {
-  "name": "senpiper",
+  "name": "assignment",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -11,8 +11,8 @@
     "react-bootstrap": "^1.3.0",
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.2.0",
-    "react-script": "^2.0.5",
-    "react-scripts": "^2.1.8"
+    "react-scripts": "^3.4.3",
+    "reactstrap": "^8.6.0"
   },
   "scripts": {
     "start": "react-scripts start",
