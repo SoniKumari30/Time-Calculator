@@ -1,7 +1,7 @@
 import React from "react"
 import {Container, Form, Col, Row, Button} from 'react-bootstrap'
 
-class FeedbackForm extends React.Component(){
+class FeedbackForm extends React.Component{
         constructor(props){
             super(props)
             this.state = {
@@ -29,11 +29,14 @@ class FeedbackForm extends React.Component(){
         }
 
     
-         const arr = []
-         JSON.parse(localStorage.getItem('arr'))
-         arr.push(formData)
-        
-        localStorage.setItem('arr',JSON.stringify(arr))
+        var arr = []
+        arr.push(formData)
+        arr=  arr.concat(JSON.parse(localStorage.getItem('arr') || "[]"))
+
+        const setItem = localStorage.setItem('arr',JSON.stringify(arr))
+        if(arr){
+            alert("Successfully added!")
+        }
     }
 
      handleChange = (e) => {
@@ -43,7 +46,7 @@ class FeedbackForm extends React.Component(){
     }
 
      handleRadioChange=(rating)=>{
-        this.setValue({rating})
+        this.setState({rating})
     }
 
     render(){
