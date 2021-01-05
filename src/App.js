@@ -2,17 +2,19 @@ import React from "react"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Container,Form} from "react-bootstrap"
 
-//velocity of river is vr
-//velocity of swimmer w.r.t river is vs
+// velocityOfRiver:X m/s,
+// velocityOfPerson:V m/s,
+// angleOfSwim:Y degree,
+// widthOfRiver:W metre,
 class App extends React.Component{
 
   constructor(){
     super()
     this.state={
-      velocityOfRiver: 1,
-      velocityOfPerson: 1,
-      angleOfSwim:1,
-      widthOfRiver:1,
+      velocityOfRiver:0,
+      velocityOfPerson:0,
+      angleOfSwim:0,
+      widthOfRiver:0,
        
     }
   }
@@ -30,7 +32,7 @@ class App extends React.Component{
     let velocityOfRiver = this.state.velocityOfRiver
     let angleOfSwim = this.state.angleOfSwim
     let widthOfRiver = this.state.widthOfRiver
-    let x = velocityOfPerson.siny
+    let x = velocityOfPerson*(Math.sin(angleOfSwim*Math.PI / 180))
     let time = widthOfRiver/x
   
 
@@ -50,10 +52,10 @@ class App extends React.Component{
                 <Form.Label>Enter velocity of the swimmer</Form.Label>
                 <Form.Control type="Number" value={velocityOfPerson} onChange={this.handleChange} name="velocityOfPerson" /> <br/><br/>
                 <Form.Label>Enter velocity of the river</Form.Label>
-                <Form.Control type="Number" value={velocityOfRiver} onChange={this.handleChange} name="velocityOFRiver" /> <br/><br/>
+                <Form.Control type="Number" value={velocityOfRiver} onChange={this.handleChange} name="velocityOfRiver" /> <br/><br/>
                 <Form.Label>Enter angle of swim</Form.Label>
                 <Form.Control type="Number" value={angleOfSwim} onChange={this.handleChange} name="angleOfSwim" /> <br/><br/>
-                <h3 className="text-dark">Time taken to cover {widthOfRiver}  {time} sec </h3>
+                <h3 className="text-dark">Time taken to cover {widthOfRiver} m is  {time} sec </h3>
               </Form.Group>
           </div>
           </div>
