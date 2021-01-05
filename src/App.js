@@ -55,7 +55,7 @@ class App extends React.Component{
                 <Form.Control type="Number" value={velocityOfRiver} onChange={this.handleChange} name="velocityOfRiver" /> <br/><br/>
                 <Form.Label>Enter angle of swim</Form.Label>
                 <Form.Control type="Number" value={angleOfSwim} onChange={this.handleChange} name="angleOfSwim" /> <br/><br/>
-                <h3 className="text-dark">Time taken to cover {widthOfRiver} m is  {time} sec </h3>
+                <h3 className="text-dark">Time taken by the swimmer is  {time} sec </h3>
               </Form.Group>
           </div>
           </div>
