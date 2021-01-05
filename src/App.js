@@ -9,10 +9,10 @@ class App extends React.Component{
   constructor(){
     super()
     this.state={
-      speedOfStream: 0,
-      speedOfPerson: 0,
-      angleOfSwim:0,
-      distance: 0,
+      velocityOfRiver: 1,
+      velocityOfPerson: 1,
+      angleOfSwim:1,
+      widthOfRiver:1,
        
     }
   }
@@ -26,11 +26,12 @@ class App extends React.Component{
   
 
   render(){
-    let speedOfPerson = this.state.speedOfPerson
-    let speedOfStream = this.state.speedOfStream
-    let distance = this.state.distance
+    let velocityOfPerson = this.state.velocityOfPerson
+    let velocityOfRiver = this.state.velocityOfRiver
     let angleOfSwim = this.state.angleOfSwim
-    let time = distance/speedOfPerson.siny
+    let widthOfRiver = this.state.widthOfRiver
+    let x = velocityOfPerson.siny
+    let time = widthOfRiver/x
   
 
     
@@ -41,22 +42,18 @@ class App extends React.Component{
         <Container>
            <div>
         <h1 className="text-info mt-5 text-center">time taken by the swimmer...</h1>
-
-
         <div className="ml-5 mt-3" style={{ width: "50%", float: "left"}}  >
         
               <Form.Group>
-
-                <h3>timeTaken...</h3>
                 <Form.Label>Enter width of the river</Form.Label>
-                <Form.Control type="Number" value={distance} onChange={this.handleChange} name="distance" /><br/><br/>
+                <Form.Control type="Number" value={widthOfRiver} onChange={this.handleChange} name="widthOfRiver" /><br/><br/>
                 <Form.Label>Enter velocity of the swimmer</Form.Label>
-                <Form.Control type="Number" value={speedOfPerson} onChange={this.handleChange} name="speedOfPerson" /> <br/><br/>
+                <Form.Control type="Number" value={velocityOfPerson} onChange={this.handleChange} name="velocityOfPerson" /> <br/><br/>
                 <Form.Label>Enter velocity of the river</Form.Label>
-                <Form.Control type="Number" value={speedOfStream} onChange={this.handleChange} name="speedOfStream" /> <br/><br/>
+                <Form.Control type="Number" value={velocityOfRiver} onChange={this.handleChange} name="velocityOFRiver" /> <br/><br/>
                 <Form.Label>Enter angle of swim</Form.Label>
                 <Form.Control type="Number" value={angleOfSwim} onChange={this.handleChange} name="angleOfSwim" /> <br/><br/>
-                <h3 className="text-dark">Time taken to cover {distance}  {time} sec</h3>
+                <h3 className="text-dark">Time taken to cover {widthOfRiver}  {time} sec </h3>
               </Form.Group>
           </div>
           </div>
