@@ -8,7 +8,7 @@ import {Container,Form} from "react-bootstrap"
 // widthOfRiver:W metre,
 class App extends React.Component{
 
-  constructor(){
+  constructor(){//
     super()
     this.state={
       velocityOfRiver:0,
