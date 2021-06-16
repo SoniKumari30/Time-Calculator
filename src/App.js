@@ -9,7 +9,7 @@ import {Container,Form} from "react-bootstrap"
 class App extends React.Component{
 
   constructor(){
-    super()//
+    super()
     this.state={
       velocityOfRiver:0,
       velocityOfPerson:0,
